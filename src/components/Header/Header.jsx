@@ -1,7 +1,7 @@
 import styles from './Header.module.css';
 import { useTranslation } from 'react-i18next';
 import bgimg from '../../assets/bgimg.png';
-
+import i18n from '../../i18n';
 const Header = () => {
   const { t, i18n } = useTranslation();
 

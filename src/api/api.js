@@ -1,4 +1,4 @@
-const BASE_URL = 'https://tilerpro.uz/api';
+const BASE_URL = 'https://api.talipovpro.uz/api';
 
 export async function getCourses() {
   const res = await fetch(`${BASE_URL}/courses/`);
@@ -11,7 +11,7 @@ export async function getTeachers() {
 }
 
 export async function getPortfolioItems() {
-  const res = await fetch(`${BASE_URL}/portfolio-items/`);
+  const res = await fetch(`${BASE_URL}/portfolio/`);
   return res.json();
 }
 
