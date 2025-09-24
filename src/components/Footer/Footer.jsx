@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import styles from './Footer.module.css';
 import { FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import { getSocialMedia, getSectionTitles } from '../api/api';
+import { getSocialMedia, getSectionTitles } from '../../api/api';
+
 
 const Footer = () => {
   const { t, i18n } = useTranslation();

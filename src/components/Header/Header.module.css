@@ -1,20 +1,110 @@
+/* Убираем глобальный скролл */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Хедер с фоном */
+.header {
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+/* Верхняя панель */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 2;
+}
+
+/* Логотип */
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00ffe0;
+  text-shadow: 0 0 8px #00ffe0;
+}
+
+/* Навигация */
+.nav {
+  display: flex;
+  gap: 16px;
+}
+
+.nav a {
+  color: #00ffe0;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.nav a:hover {
+  color: white;
+  text-shadow: 0 0 8px #00ffe0;
+}
+
+/* Переключатель языка */
 .langSwitcher {
   display: flex;
   gap: 8px;
-  margin-left: auto;
 }
 
 .langSwitcher button {
   background: transparent;
   border: 1px solid #00ffe0;
   color: #00ffe0;
-  padding: 4px 8px;
+  padding: 6px 12px;
   cursor: pointer;
+  font-weight: bold;
   transition: 0.3s;
 }
 
 .langSwitcher button:hover {
   background: #00ffe0;
-  color: #000;
+  color: black;
   box-shadow: 0 0 8px #00ffe0;
+}
+
+/* Hero-зона */
+.hero {
+  text-align: center;
+  padding-bottom: 10vh;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px #00ffe0;
+  animation: glow 2s infinite alternate;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: white;
+  margin-top: 20px;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px #00ffe0;
+  }
+  100% {
+    text-shadow: 0 0 20px #00fff2;
+  }
 }

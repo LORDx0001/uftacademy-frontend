@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from './ContactForm.module.css';
-import { getSectionTitles, sendContactMessage } from '../api/api';
+import { getSectionTitles, sendContactMessage } from '../../api/api';
 
 const ContactForm = () => {
   const { t, i18n } = useTranslation();

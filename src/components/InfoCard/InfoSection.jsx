@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import InfoCard from './InfoCard';
 import styles from './InfoSection.module.css';
-import { getInfoFacts, getSectionTitles } from '../api/api';
+import { getInfoFacts, getSectionTitles } from '../../api/api';
 
 const InfoSection = () => {
   const [facts, setFacts] = useState([]);

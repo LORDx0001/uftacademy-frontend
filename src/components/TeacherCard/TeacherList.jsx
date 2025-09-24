@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import TeacherCard from './TeacherCard';
 import styles from './TeacherList.module.css';
-import { getTeachers, getSectionTitles } from '../api/api';
+import { getTeachers, getSectionTitles } from '../../api/api';
 
 const TeacherList = () => {
   const [teachers, setTeachers] = useState([]);

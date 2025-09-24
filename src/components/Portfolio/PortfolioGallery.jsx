@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import PortfolioItem from './PortfolioItem';
 import styles from './PortfolioGallery.module.css';
-import { getPortfolioItems, getSectionTitles } from '../api/api';
+import { getPortfolioItems, getSectionTitles } from '../../api/api';
 
 const PortfolioGallery = () => {
   const [items, setItems] = useState([]);
