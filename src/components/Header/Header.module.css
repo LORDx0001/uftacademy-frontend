@@ -1,0 +1,20 @@
+.langSwitcher {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.langSwitcher button {
+  background: transparent;
+  border: 1px solid #00ffe0;
+  color: #00ffe0;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.langSwitcher button:hover {
+  background: #00ffe0;
+  color: #000;
+  box-shadow: 0 0 8px #00ffe0;
+}
