@@ -8,7 +8,7 @@ const InfoSection = () => {
   const [facts, setFacts] = useState([]);
   const [titles, setTitles] = useState([]);
   const { i18n } = useTranslation();
-  const lang = i18n.language;
+  const lang = i18n.language?.split('-')[0] || 'ru';
 
   useEffect(() => {
     getInfoFacts().then(setFacts);
@@ -17,7 +17,7 @@ const InfoSection = () => {
 
   const getTitle = (key) => {
     const item = titles.find(t => t.key === key);
-    return item ? item[`title_${lang}`] : '';
+    return item ? item[`title_${lang}`] || item.title : '';
   };
 
   return (

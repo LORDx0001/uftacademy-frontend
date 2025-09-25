@@ -1,19 +1,20 @@
 import styles from './InfoCard.module.css';
-import { getIcon } from './iconMap';
 
 const InfoCard = ({ iconName, title, description }) => {
-  const Icon = getIcon(iconName);
-
   return (
     <div className={styles.card}>
-      <div className={styles.inner}>
-        <div className={styles.front}>
-          <div className={styles.icon}><Icon /></div>
-          <h3>{title}</h3>
-        </div>
-        <div className={styles.back}>
-          <p>{description}</p>
-        </div>
+      {/* Верхний слой с иконкой и заголовком */}
+      <div className={styles.front}>
+        <div
+          className={styles.icon}
+          style={{ backgroundImage: `url(${iconName})` }}
+        />
+        {title && <h3 className={styles.heading}>{title}</h3>}
+      </div>
+
+      {/* Нижний слой с описанием */}
+      <div className={styles.back}>
+        {description && <p className={styles.text}>{description}</p>}
       </div>
     </div>
   );

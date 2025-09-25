@@ -15,10 +15,16 @@ export async function getPortfolioItems() {
   return res.json();
 }
 
+export async function getSectionTitleByKey(key) {
+  const res = await fetch(`${BASE_URL}/section-titles/by-key/${key}/`);
+  return res.json();
+}
+
 export async function getSectionTitles() {
   const res = await fetch(`${BASE_URL}/section-titles/`);
   return res.json();
 }
+
 
 export async function getSocialMedia() {
   const res = await fetch(`${BASE_URL}/social-media/`);
@@ -36,4 +42,9 @@ export async function sendContactMessage(data) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data),
   });
+}
+
+export async function getHeaderSection() {
+  const res = await fetch(`${BASE_URL}/header-section/`);
+  return res.json();
 }
