@@ -1,0 +1,49 @@
+{
+  "header": {
+    "logo": "IT Akademiya",
+    "nav": {
+      "about": "Biz haqimizda",
+      "courses": "Kurslar",
+      "professors": "Professorlar",
+      "portfolio": "Portfolio",
+      "contact": "Aloqa"
+    },
+    "lang": {
+      "uz": "O'zbekcha",
+      "ru": "Русский",
+      "en": "English"
+    }
+  },
+  "about": {
+    "title": "Biz haqimizda",
+    "description": "Biz IT sohasida yuqori sifatli ta'lim beruvchi akademiyamiz."
+  },
+  "courses": {
+    "title": "Kurslar",
+    "description": "Dasturlash, dizayn va boshqa ko‘plab yo‘nalishlar."
+  },
+  "professors": {
+    "title": "Professorlar",
+    "description": "O‘z ishining ustalari bo‘lgan o‘qituvchilarimiz bilan tanishing."
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "description": "Bizning talabalar va jamoamiz ishlaridan namunalar."
+  },
+  "contact": {
+    "title": "Biz bilan bog‘laning",
+    "form": {
+      "name": "Ism Familiya",
+      "phone": "Telefon raqam",
+      "message": "Xabar",
+      "submit": "Yuborish"
+    }
+  },
+  "footer": {
+    "title": "IT Akademiya",
+    "links": {
+      "privacy": "Maxfiylik siyosati",
+      "terms": "Foydalanish shartlari"
+    }
+  }
+}

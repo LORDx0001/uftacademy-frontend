@@ -1,0 +1,49 @@
+{
+  "header": {
+    "logo": "IT Academy",
+    "nav": {
+      "about": "About Us",
+      "courses": "Courses",
+      "professors": "Professors",
+      "portfolio": "Portfolio",
+      "contact": "Contact"
+    },
+    "lang": {
+      "uz": "O'zbekcha",
+      "ru": "Русский",
+      "en": "English"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "description": "We are an academy providing high-quality IT education."
+  },
+  "courses": {
+    "title": "Courses",
+    "description": "Programming, design and many other directions."
+  },
+  "professors": {
+    "title": "Professors",
+    "description": "Meet our expert and experienced instructors."
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "description": "Examples of works from our students and team."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "form": {
+      "name": "Full Name",
+      "phone": "Phone Number",
+      "message": "Message",
+      "submit": "Send"
+    }
+  },
+  "footer": {
+    "title": "IT Academy",
+    "links": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Use"
+    }
+  }
+}
