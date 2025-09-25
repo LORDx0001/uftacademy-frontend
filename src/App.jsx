@@ -2,7 +2,7 @@ import Header from './components/Header/Header';
 import CourseList from './components//CourseCard/CourseList';
 import TeacherList from './components/TeacherCard/TeacherList';
 import PortfolioGallery from './components/Portfolio/PortfolioGallery';
-import InfoSection from './components/InfoCard/InfoSection';
+import InfoSection from './components/InfoCard/Info';
 import ContactForm from './components/ContactUs/ContactForm';
 import Footer from './components/Footer/Footer';
 

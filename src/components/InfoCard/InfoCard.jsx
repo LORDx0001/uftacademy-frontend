@@ -1,23 +1,22 @@
 import styles from './InfoCard.module.css';
 
-const InfoCard = ({ iconName, title, description }) => {
+export default function InfoCard({ iconName, title, description }) {
   return (
-    <div className={styles.card}>
-      {/* Верхний слой с иконкой и заголовком */}
-      <div className={styles.front}>
-        <div
-          className={styles.icon}
-          style={{ backgroundImage: `url(${iconName})` }}
-        />
-        {title && <h3 className={styles.heading}>{title}</h3>}
-      </div>
-
-      {/* Нижний слой с описанием */}
-      <div className={styles.back}>
-        {description && <p className={styles.text}>{description}</p>}
+    <div className={styles.container}>
+      <div className={styles.card}>
+        <div className={`${styles.slide} ${styles.slide1}`}>
+          <div
+            className={styles.icon}
+            style={{ backgroundImage: `url(${iconName})` }}
+          />
+        </div>
+        <div className={`${styles.slide} ${styles.slide2}`}>
+          <div className={styles.content}>
+            <h3>{title}</h3>
+            <p>{description}</p>
+          </div>
+        </div>
       </div>
     </div>
   );
-};
-
-export default InfoCard;
+}

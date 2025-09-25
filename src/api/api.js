@@ -1,50 +1,66 @@
 const BASE_URL = 'https://api.talipovpro.uz/api';
 
+async function fetchData(endpoint) {
+  try {
+    const res = await fetch(`${BASE_URL}/${endpoint}`);
+    if (!res.ok) throw new Error(`Ошибка: ${res.status}`);
+    return await res.json();
+  } catch (error) {
+    console.error(`Ошибка при запросе ${endpoint}:`, error);
+    return [];
+  }
+}
+
+// === Info ===
+export async function getInfoItems() {
+  return fetchData('info/');
+}
+
+// === Courses ===
 export async function getCourses() {
-  const res = await fetch(`${BASE_URL}/courses/`);
-  return res.json();
+  return fetchData('courses/');
 }
 
+// === Teachers ===
 export async function getTeachers() {
-  const res = await fetch(`${BASE_URL}/teachers/`);
-  return res.json();
+  return fetchData('teachers/');
 }
 
+// === Portfolio ===
 export async function getPortfolioItems() {
-  const res = await fetch(`${BASE_URL}/portfolio/`);
-  return res.json();
+  return fetchData('portfolio/');
+}
+
+// === Section Titles ===
+export async function getSectionTitles() {
+  return fetchData('section-titles/');
 }
 
 export async function getSectionTitleByKey(key) {
-  const res = await fetch(`${BASE_URL}/section-titles/by-key/${key}/`);
-  return res.json();
+  return fetchData(`section-titles/by-key/${key}/`);
 }
 
-export async function getSectionTitles() {
-  const res = await fetch(`${BASE_URL}/section-titles/`);
-  return res.json();
-}
-
-
+// === Social Media ===
 export async function getSocialMedia() {
-  const res = await fetch(`${BASE_URL}/social-media/`);
-  return res.json();
+  return fetchData('social-media/');
 }
 
-export async function getInfoFacts() {
-  const res = await fetch(`${BASE_URL}/info/`);
-  return res.json();
-}
-
-export async function sendContactMessage(data) {
-  return fetch(`${BASE_URL}/contact/`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
-  });
-}
-
+// === Header Section ===
 export async function getHeaderSection() {
-  const res = await fetch(`${BASE_URL}/header-section/`);
-  return res.json();
+  return fetchData('header-section/');
+}
+
+// === Contact Form ===
+export async function sendContactMessage(data) {
+  try {
+    const res = await fetch(`${BASE_URL}/contact/`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    return await res.json();
+  } catch (error) {
+    console.error('Ошибка при отправке сообщения:', error);
+    return { success: false };
+  }
 }
