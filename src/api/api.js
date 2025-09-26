@@ -4,16 +4,18 @@ const API = axios.create({
   baseURL: "https://api.talipovpro.uz/api",
 });
 
+
 // Header — agar header’da alohida app bo‘lsa
 export const getHeader = async () => {
   try {
-    const response = await axios.get(`${API_URL}/header/`);
+    const response = await API.get("/header/");
     return response.data;
   } catch (error) {
-    console.error("Error fetching header data:", error);
+    console.error("Ошибка при получении данных заголовка:", error);
     return [];
   }
 };
+
 
 // About
 export const getAbout = () => API.get("/about/");

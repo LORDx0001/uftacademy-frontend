@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { getHeader } from "../../api/api";
 import styles from "./Header.module.css";
 import { useTranslation } from "react-i18next";
+import Navbar from "./Navbar";
+import LangSwitcher from "./LangSwitcher";
 
 const Header = () => {
   const { i18n } = useTranslation();
@@ -38,27 +40,19 @@ const Header = () => {
       className={styles.header}
       style={{ backgroundImage: `url(${header.background})` }}
     >
-      <div className={styles.logo}>
-        <img src={header.logo} alt="Logo" />
+      <div className={styles.topBar}>
+        <div className={styles.logo}>
+          <img src={header.logo} alt="Logo" />
+        </div>
+        <div className={styles.rightBlock}>
+          <Navbar />
+          <LangSwitcher />
+        </div>
       </div>
 
-      <h1 className={styles.title}>{currentTitle}</h1>
-      <p className={styles.description}>{currentDescription}</p>
-
-      <nav>
-        <ul className={styles.navbar}>
-          <li>About</li>
-          <li>Courses</li>
-          <li>Professors</li>
-          <li>Portfolio</li>
-          <li>Contact</li>
-        </ul>
-      </nav>
-
-      <div className={styles.langButtons}>
-        <button onClick={() => i18n.changeLanguage("uz")}>UZ</button>
-        <button onClick={() => i18n.changeLanguage("ru")}>RU</button>
-        <button onClick={() => i18n.changeLanguage("en")}>EN</button>
+      <div className={styles.centerContent}>
+        <h1 className={styles.title}>{currentTitle}</h1>
+        <p className={styles.description}>{currentDescription}</p>
       </div>
     </header>
   );

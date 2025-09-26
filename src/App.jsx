@@ -6,7 +6,7 @@ import Professors from "./components/Professors/Professors";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
-import "./i18n";  // i18n sozlamasini qo‘shish
+import "./i18n"; 
 
 function App() {
   return (
