@@ -33,7 +33,8 @@
   "contact": {
     "title": "Свяжитесь с нами",
     "form": {
-      "name": "Имя Фамилия",
+      "first_name": "First Name",
+      "last_name": "Last Name",
       "phone": "Номер телефона",
       "message": "Сообщение",
       "submit": "Отправить"

@@ -31,36 +31,36 @@ const Contact = () => {
 
   return (
     <section id="contact" className={styles.contact}>
-      <h2>{t("header.contact")}</h2>
+      <h2>{t("contact.title")}</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="first_name"
-          placeholder={t("contact.first_name")}
+          placeholder={t("contact.form.first_name")}
           value={form.first_name}
           onChange={handleChange}
         />
         <input
           type="text"
           name="last_name"
-          placeholder={t("contact.last_name")}
+          placeholder={t("contact.form.last_name")}
           value={form.last_name}
           onChange={handleChange}
         />
         <input
           type="text"
           name="phone_number"
-          placeholder={t("contact.phone_number")}
+          placeholder={t("contact.form.phone")}
           value={form.phone_number}
           onChange={handleChange}
         />
         <textarea
           name="message"
-          placeholder={t("contact.message")}
+          placeholder={t("contact.form.message")}
           value={form.message}
           onChange={handleChange}
         />
-        <button type="submit">{t("contact.send")}</button>
+        <button type="submit">{t("contact.form.submit")}</button>
       </form>
     </section>
   );

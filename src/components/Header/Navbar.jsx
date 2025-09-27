@@ -24,7 +24,7 @@ const Navbar = () => {
               `${styles.link} ${isActive ? styles.active : ""}`
             }
           >
-            {t(`navbar.${key}`)}
+            {t(`header.nav.${key}`)}
           </NavLink>
         </li>
       ))}
