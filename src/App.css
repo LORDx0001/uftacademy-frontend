@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  vertical-align: baseline;
+  font-family: "Montserrat", sans-serif;
+
+}
+
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.content {
+  width: 100%;
+  padding: 0px 60px;
+}
