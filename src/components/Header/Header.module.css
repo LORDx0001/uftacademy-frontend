@@ -404,8 +404,9 @@ header {
 }
 
 .button3D a:hover span {
-  color: black;
-  background: #00f0ff;
+  color: #00f0ff;
+
+  background: #000000b4;
   border: 2px solid black;
   box-shadow:
     0 0 10px #00f0ff,
