@@ -204,16 +204,15 @@ header {
   align-items: center;
   gap: 20px;
   z-index: 1;
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 .title {
-  font-size: 3.5rem;
-  font-weight: 700;
+  font-size: 3.6rem;
 }
 
 .description {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 400;
   line-height: 1.6;
 }
