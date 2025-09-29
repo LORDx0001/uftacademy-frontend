@@ -1,6 +1,12 @@
 {
   "header": {
     "logo": "IT Akademiya",
+    "buttons": [
+      "Batafsil",
+      "Boshlash",
+      "Bog‘lanish",
+      "O‘rganish"
+    ],
     "nav": {
       "about": "Biz haqimizda",
       "courses": "Kurslar",

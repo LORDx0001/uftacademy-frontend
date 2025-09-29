@@ -1,6 +1,7 @@
 {
   "header": {
     "logo": "IT Academy",
+    "buttons": ["Learn More", "Get Started", "Contact Us", "Explore"],
     "nav": {
       "about": "About Us",
       "courses": "Courses",

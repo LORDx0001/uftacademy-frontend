@@ -6,7 +6,7 @@ import Navbar from "./Navbar";
 import LangSwitcher from "./LangSwitcher";
 
 const Header = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const [header, setHeader] = useState(null);
 
   useEffect(() => {
@@ -25,15 +25,17 @@ const Header = () => {
     i18n.language === "uz"
       ? header.title_uz
       : i18n.language === "ru"
-      ? header.title_ru
-      : header.title_en;
+        ? header.title_ru
+        : header.title_en;
 
   const currentDescription =
     i18n.language === "uz"
       ? header.description_uz
       : i18n.language === "ru"
-      ? header.description_ru
-      : header.description_en;
+        ? header.description_ru
+        : header.description_en;
+
+  const buttons = t("header.buttons", { returnObjects: true });
 
   return (
     <header
@@ -53,7 +55,16 @@ const Header = () => {
       <div className={styles.centerContent}>
         <h1 className={styles.title}>{currentTitle}</h1>
         <p className={styles.description}>{currentDescription}</p>
+
+        <div className={styles.button3D}>
+          <a href="#">
+            {buttons.map((label, index) => (
+              <span key={index}>{label}</span>
+            ))}
+          </a>
+        </div>
       </div>
+
     </header>
   );
 };
