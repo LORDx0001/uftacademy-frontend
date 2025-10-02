@@ -54,6 +54,8 @@ const Header = () => {
 
       <div className={styles.centerContent}>
         <h1 className={styles.title}>{currentTitle}</h1>
+        <h1>LORDx</h1>
+        <h1>LORDx</h1>
         <p className={styles.description}>{currentDescription}</p>
 
         <div className={styles.button3D}>
