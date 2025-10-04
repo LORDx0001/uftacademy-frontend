@@ -21,6 +21,7 @@ header {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-image: url(../../assets/b.png);
 }
 
 .background::after {
@@ -50,13 +51,10 @@ header {
   width: 200px;
   max-width: 180px;
   object-fit: contain;
-  filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.6));
+  filter: drop-shadow(0 0 8px #2BB32A);
   transition: transform 0.3s ease;
 }
 
-.logo img:hover {
-  transform: scale(1.05);
-}
 
 .link-block {
   display: flex;
@@ -91,7 +89,7 @@ header {
 }
 
 .link:hover {
-  color: rgb(16, 221, 187);
+  color: #2BB32A;
 }
 
 .link::before {
@@ -101,11 +99,11 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  border-top: 1px solid rgb(16, 221, 187);
-  border-bottom: 1px solid rgb(16, 221, 187);
-  box-shadow: 0 0 10px rgb(16, 221, 187),
-    0 0 20px rgb(16, 221, 187),
-    0 0 40px rgb(16, 221, 187);
+  border-top: 1px solid #2BB32A;
+  border-bottom: 1px solid #2BB32A;
+  box-shadow: 0 0 10px #2BB32A,
+    0 0 20px #2BB32A,
+    0 0 40px #2BB32A;
   transform: scaleY(2);
   opacity: 0;
   transition: 0.3s ease;
@@ -149,20 +147,35 @@ header {
 }
 
 .lang:hover {
-  background-color: rgb(16, 221, 187);
+  background-color: #2BB32A;
   color: black;
   border: 1px solid black;
-  box-shadow: 0 0 10px rgb(16, 221, 187),
-    0 0 20px rgb(16, 221, 187),
-    0 0 40px rgb(16, 221, 187);
+  box-shadow: 0 0 10px #2BB32A,
+    0 0 20px #2BB32A,
+    0 0 40px #2BB32A;
 }
 
 .lang.active {
-  border: 1px solid rgb(16, 221, 187);
-  color: rgb(16, 221, 187);
+  border: 2px solid #2BB32A;
+  color: #2BB32A;
   background-color: transparent;
   animation: langGlow 1.5s infinite alternate;
 }
+
+@keyframes langGlow {
+  0% {
+    box-shadow: 0 0 5px #2BB32A,
+      0 0 10px #2BB32A,
+      0 0 15px #2BB32A;
+  }
+
+  100% {
+    box-shadow: 0 0 15px #2BB32A,
+      0 0 30px #2BB32A,
+      0 0 45px #2BB32A;
+  }
+}
+
 
 
 /* === HERO SECTION === */
@@ -183,9 +196,9 @@ header {
   color: #ffffff;
   text-transform: uppercase;
   text-shadow:
-    0 0 5px rgb(16, 221, 187),
-    0 0 10px rgb(16, 221, 187),
-    0 0 20px rgb(16, 221, 187);
+    0 0 5px #2BB32A,
+    0 0 10px #2BB32A,
+    0 0 20px #2BB32A;
   animation: glowTitle 2s infinite alternate;
   max-width: 800px;
   margin: 0 auto;
@@ -218,32 +231,32 @@ header {
 /* === BUTTON === */
 .button {
   background-color: #000;
-  color: #00f0ff;
+  color: #2BB32A;
   font-size: 1.2rem;
   font-weight: bold;
   padding: 14px 32px;
-  border: 2px solid #00f0ff;
+  border: 2px solid #2BB32A;
   border-radius: 8px;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 5px #00f0ff,
-    0 0 10px #00f0ff,
-    0 0 20px #00f0ff,
-    0 0 40px #00f0ff;
+  box-shadow: 0 0 5px #2BB32A,
+    0 0 10px #2BB32A,
+    0 0 20px #2BB32A,
+    0 0 40px #2BB32A;
   animation: pulseGlow 2s infinite alternate;
 }
 
 .button:hover {
-  background-color: #00f0ff;
+  background-color: #2BB32A;
   color: black;
   border: 2px solid black;
   transform: scale(1.05);
-  box-shadow: 0 0 10px #00f0ff,
-    0 0 20px #00f0ff,
-    0 0 40px #00f0ff,
-    0 0 80px #00f0ff;
+  box-shadow: 0 0 10px #2BB32A,
+    0 0 20px #2BB32A,
+    0 0 40px #2BB32A,
+    0 0 80px #2BB32A;
   animation: blackGlow 2s infinite alternate;
 }
 
@@ -260,42 +273,42 @@ header {
 /* === ANIMATIONS === */
 @keyframes h1Glow {
   0% {
-    text-shadow: 0 0 5px rgb(16, 221, 187),
-      0 0 10px rgb(16, 221, 187),
-      0 0 20px rgb(16, 221, 187);
+    text-shadow: 0 0 5px #2BB32A,
+      0 0 10px #2BB32A,
+      0 0 20px #2BB32A;
   }
 
   100% {
-    text-shadow: 0 0 10px #00fff2,
-      0 0 20px #00fff2,
-      0 0 40px #00fff2,
-      0 0 80px #00fff2;
+    text-shadow: 0 0 10px #2BB32A,
+      0 0 20px #2BB32A,
+      0 0 40px #2BB32A,
+      0 0 80px #2BB32A;
   }
 }
 
 @keyframes glowTitle {
   0% {
-    text-shadow: 0 0 5px #00fff2;
+    text-shadow: 0 0 5px #2BB32A;
   }
 
   100% {
-    text-shadow: 0 0 15px #00fff2,
-      0 0 30px #00fff2;
+    text-shadow: 0 0 15px #2BB32A,
+      0 0 30px #2BB32A;
   }
 }
 
 @keyframes pulseGlow {
   0% {
-    box-shadow: 0 0 5px #00f0ff,
-      0 0 10px #00f0ff,
-      0 0 20px #00f0ff;
+    box-shadow: 0 0 5px #2BB32A,
+      0 0 10px #2BB32A,
+      0 0 20px #2BB32A;
   }
 
   100% {
-    box-shadow: 0 0 10px #00f0ff,
-      0 0 20px #00f0ff,
-      0 0 40px #00f0ff,
-      0 0 80px #00f0ff;
+    box-shadow: 0 0 10px #2BB32A,
+      0 0 20px #2BB32A,
+      0 0 40px #2BB32A,
+      0 0 80px #2BB32A;
   }
 }
 
@@ -305,9 +318,9 @@ header {
   }
 
   100% {
-    text-shadow: 0 0 10px #00fff2,
-      0 0 20px #00fff2,
-      0 0 40px #00fff2;
+    text-shadow: 0 0 10px #2BB32A,
+      0 0 20px #2BB32A,
+      0 0 40px #2BB32A;
   }
 }
 
@@ -317,21 +330,21 @@ header {
   }
 
   100% {
-    box-shadow: 0 0 10px #00fff2,
-      0 0 20px #00fff2,
-      0 0 40px #00fff2;
+    box-shadow: 0 0 10px #2BB32A,
+      0 0 20px #2BB32A,
+      0 0 40px #2BB32A;
   }
 }
 
 @keyframes blackGlow {
   0% {
-    box-shadow: 0 0 5px #00f0ff;
+    box-shadow: 0 0 5px #2BB32A;
   }
 
   100% {
-    box-shadow: 0 0 15px #00f0ff,
-      0 0 30px #00f0ff,
-      0 0 60px #00f0ff;
+    box-shadow: 0 0 15px #2BB32A,
+      0 0 30px #2BB32A,
+      0 0 60px #2BB32A;
   }
 }
 
@@ -386,33 +399,33 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #00f0ff;
+  color: #2BB32A;
   background: rgba(0, 0, 0, 0.85);
   font-family: "Work Sans", sans-serif;
   text-transform: uppercase;
   font-size: 18px;
   letter-spacing: 1px;
   transition: 0.5s;
-  border: 2px solid #00f0ff;
+  border: 2px solid #2BB32A;
   box-sizing: border-box;
   box-shadow:
-    0 0 5px #00f0ff,
-    0 0 10px #00f0ff,
-    0 0 20px #00f0ff,
-    inset 0 0 10px #00f0ff;
+    0 0 5px #2BB32A,
+    0 0 10px #2BB32A,
+    0 0 20px #2BB32A,
+    inset 0 0 10px #2BB32A;
   animation: neonPulse 2s infinite alternate;
 }
 
 .button3D a:hover span {
-  color: #00f0ff;
+  color: #ffffff;
 
-  background: #000000b4;
-  border: 2px solid black;
+  background: #000000cb;
+  border: 2px solid rgb(255, 255, 255);
   box-shadow:
-    0 0 10px #00f0ff,
-    0 0 20px #00f0ff,
-    0 0 40px #00f0ff,
-    inset 0 0 20px #00f0ff;
+    0 0 10px #2BB32A,
+    0 0 20px #2BB32A,
+    0 0 40px #2BB32A,
+    inset 0 0 20px #2BB32A;
 }
 
 .button3D a span:nth-child(1) {

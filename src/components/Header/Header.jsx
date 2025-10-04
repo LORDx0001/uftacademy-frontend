@@ -4,6 +4,8 @@ import styles from "./Header.module.css";
 import { useTranslation } from "react-i18next";
 import Navbar from "./Navbar";
 import LangSwitcher from "./LangSwitcher";
+import { Link } from "react-router-dom";
+
 
 const Header = () => {
   const { i18n, t } = useTranslation();
@@ -40,12 +42,15 @@ const Header = () => {
   return (
     <header
       className={styles.header}
-      style={{ backgroundImage: `url(${header.background})` }}
+    // style={{ backgroundImage: `url(${header.background})` }}
     >
       <div className={styles.topBar}>
         <div className={styles.logo}>
-          <img src={header.logo} alt="Logo" />
+          <Link to="/">
+            <img src={header.logo} alt="Logo" />
+          </Link>
         </div>
+
         <div className={styles.rightBlock}>
           <Navbar />
           <LangSwitcher />
@@ -54,8 +59,6 @@ const Header = () => {
 
       <div className={styles.centerContent}>
         <h1 className={styles.title}>{currentTitle}</h1>
-        <h1>LORDx</h1>
-        <h1>LORDx</h1>
         <p className={styles.description}>{currentDescription}</p>
 
         <div className={styles.button3D}>

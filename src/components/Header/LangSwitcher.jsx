@@ -14,7 +14,7 @@ const LangSwitcher = () => {
           key={lang}
           className={
             i18n.language === lang
-              ? `${styles.lang} ${styles.activeLang}`
+              ? `${styles.lang} ${styles.active}`
               : styles.lang
           }
           onClick={() => i18n.changeLanguage(lang)}

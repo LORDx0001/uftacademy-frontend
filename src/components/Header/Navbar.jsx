@@ -5,9 +5,9 @@ import { useTranslation } from "react-i18next";
 
 const navItems = [
   { key: "about", path: "/about-us" },
+  { key: "gallery", path: "/gallery" },
   { key: "courses", path: "/courses" },
-  { key: "professors", path: "/professors" },
-  { key: "portfolio", path: "/portfolio" },
+  { key: "reviews", path: "/reviews" },
   { key: "contact", path: "/contact" },
 ];
 
