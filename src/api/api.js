@@ -4,8 +4,7 @@ const API = axios.create({
   baseURL: "https://api.talipovpro.uz/api",
 });
 
-
-// Header — agar header’da alohida app bo‘lsa
+// Header
 export const getHeader = async () => {
   try {
     const response = await API.get("/header/");
@@ -16,21 +15,32 @@ export const getHeader = async () => {
   }
 };
 
-
 // About
 export const getAbout = () => API.get("/about/");
+
+// About Images
+export const getAboutImages = () => API.get("/about-images/");
+
+// About Statistics
+export const getAboutStats = () => API.get("/about-stats/");
 
 // Courses
 export const getCourses = () => API.get("/courses/");
 
-// Professors
-export const getProfessors = () => API.get("/professors/");
-
-// Portfolio
-export const getPortfolio = () => API.get("/portfolio/");
-
 // Footer
 export const getFooter = () => API.get("/footer/");
+
+// Gallery
+export const getGallery = () => API.get("/gallery/");
+
+// Reviews — GET
+export const getReviews = () => API.get("/reviews/");
+
+// Reviews — POST
+export const sendReview = (data) => API.post("/reviews/", data);
+
+// Titles
+export const getTitles = () => API.get("/titles/");
 
 // Contact — POST
 export const sendContact = (data) => API.post("/contacts/", data);

@@ -1,0 +1,368 @@
+/* === ABOUT SECTION === */
+.about {
+  padding: 60px 0px;
+  background: linear-gradient(135deg, #082701e0 0%, #000000 100%);
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === MAIN CONTENT === */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: flex-start;
+  margin-bottom: 80px;
+}
+
+.textContent {
+  padding-right: 40px;
+}
+
+.title {
+  font-size: 3rem;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 40px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 5px #2BB32A,
+    0 0 10px #2BB32A,
+    0 0 20px #2BB32A;
+  animation: glowTitle 2s infinite alternate;
+  letter-spacing: 2px;
+}
+
+.description {
+  color: #ffffff;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-shadow: 0 0 3px rgba(43, 179, 42, 0.3);
+}
+
+.description p {
+  margin-bottom: 20px;
+}
+
+/* === IMAGE CONTENT === */
+.imageContent {
+  position: relative;
+  height: 320px;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 140px 140px;
+  gap: 15px;
+  height: 100%;
+  position: relative;
+}
+
+/* ...existing code... */
+
+.aboutImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #2BB32A;
+  box-shadow:
+    0 0 10px #2BB32A,
+    0 0 20px rgba(43, 179, 42, 0.5);
+  transition: all 0.3s ease;
+}
+
+.aboutImage:hover {
+  box-shadow:
+    0 0 20px #2BB32A,
+    0 0 40px rgba(43, 179, 42, 0.7);
+}
+
+.aboutImage:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.aboutImage:nth-child(1):hover {
+  transform: scale(1.05);
+}
+
+.aboutImage:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+  transform: translateY(20px);
+}
+
+.aboutImage:nth-child(2):hover {
+  transform: translateY(20px) scale(1.05);
+}
+
+.aboutImage:nth-child(3) {
+  grid-column: 1;
+  grid-row: 2;
+  transform: translateY(-10px);
+}
+
+.aboutImage:nth-child(3):hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+.aboutImage:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+  transform: translateY(10px);
+}
+
+.aboutImage:nth-child(4):hover {
+  transform: translateY(10px) scale(1.05);
+}
+
+/* ...existing code... */
+/* === STATISTICS SECTION === */
+/* ...existing code... */
+
+/* === STATISTICS SECTION === */
+.statistics {
+  background: rgba(43, 179, 42, 0.1);
+  border: 2px solid #2BB32A;
+  padding: 60px 40px;
+  border-radius: 12px;
+  margin-top: 60px;
+  box-shadow: 0 0 20px rgba(43, 179, 42, 0.3);
+  transition: all 0.3s ease;
+}
+
+.statistics:hover {
+  box-shadow: 
+    0 0 30px rgba(43, 179, 42, 0.5),
+    0 0 50px rgba(43, 179, 42, 0.3);
+  background: rgba(43, 179, 42, 0.15);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 колонок вместо 4 */
+  gap: 30px; /* Уменьшен зазор */
+}
+
+.statItem {
+  text-align: center;
+  /* Убраны отдельные бокси - удалены padding, background, border */
+  transition: all 0.3s ease;
+}
+
+.statItem:hover {
+  transform: translateY(-5px);
+  /* Убраны hover эффекты для фона и тени */
+}
+
+.statNumber {
+  font-size: 2.2rem; /* Уменьшен размер шрифта */
+  color: #2BB32A;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10px;
+  text-shadow:
+    0 0 10px #2BB32A,
+    0 0 20px #2BB32A;
+  animation: numberGlow 2s infinite alternate;
+}
+
+.statLabel {
+  color: #ffffff;
+  font-size: 0.9rem; /* Уменьшен размер шрифта */
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+/* ...existing code... */
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1024px) {
+  /* ...existing code... */
+  
+  .statsGrid {
+    grid-template-columns: repeat(5, 1fr); /* Оставляем 5 колонок */
+    gap: 25px;
+  }
+  
+  .statNumber {
+    font-size: 2rem; /* Адаптивный размер */
+  }
+  
+  .statLabel {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* ...existing code... */
+  
+  .statsGrid {
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки на планшете */
+    gap: 20px;
+  }
+  
+  .statNumber {
+    font-size: 1.8rem;
+  }
+  
+  .statLabel {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* ...existing code... */
+  
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки на мобильном */
+    gap: 15px;
+  }
+  
+  .statNumber {
+    font-size: 1.6rem;
+  }
+  
+  .statLabel {
+    font-size: 0.7rem;
+  }
+  
+  .statistics {
+    padding: 40px 20px;
+  }
+}
+/* === ANIMATIONS === */
+@keyframes glowTitle {
+  0% {
+    text-shadow: 
+      0 0 5px #2BB32A,
+      0 0 10px #2BB32A,
+      0 0 20px #2BB32A;
+  }
+  100% {
+    text-shadow: 
+      0 0 10px #2BB32A,
+      0 0 20px #2BB32A,
+      0 0 40px #2BB32A,
+      0 0 60px #2BB32A;
+  }
+}
+
+@keyframes numberGlow {
+  0% {
+    text-shadow: 
+      0 0 10px #2BB32A,
+      0 0 20px #2BB32A;
+  }
+  100% {
+    text-shadow: 
+      0 0 15px #2BB32A,
+      0 0 30px #2BB32A,
+      0 0 45px #2BB32A;
+  }
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1024px) {
+  .content {
+    gap: 60px;
+  }
+  
+  .textContent {
+    padding-right: 20px;
+  }
+  
+  .imageContent {
+    height: 280px;
+  }
+  
+  .imageGrid {
+    grid-template-rows: 120px 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 60px 30px;
+  }
+  
+  .content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .textContent {
+    padding-right: 0;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .imageContent {
+    height: 260px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .imageGrid {
+    grid-template-rows: 110px 110px;
+  }
+  
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .statNumber {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 40px 20px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .imageContent {
+    height: auto;
+    max-width: 300px;
+  }
+  
+  .imageGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 150px);
+  }
+  
+  .aboutImage:nth-child(2),
+  .aboutImage:nth-child(3),
+  .aboutImage:nth-child(4) {
+    transform: none;
+  }
+  
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .statistics {
+    padding: 40px 20px;
+  }
+  
+  .statItem {
+    padding: 15px;
+  }
+}
