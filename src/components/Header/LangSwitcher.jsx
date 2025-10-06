@@ -2,24 +2,28 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./Header.module.css";
 
-const langs = ["uz", "ru", "en"];
-
-const LangSwitcher = () => {
+const LangSwitcher = ({ isMobile = false }) => {
   const { i18n } = useTranslation();
+  
+  const languages = [
+    { code: 'uz', label: 'UZ' },
+    { code: 'ru', label: 'RU' },
+    { code: 'en', label: 'EN' }
+  ];
+
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  };
 
   return (
-    <div className={styles.langButtons}>
-      {langs.map((lang) => (
+    <div className={isMobile ? styles.mobileLangs : styles.langs}>
+      {languages.map((lang) => (
         <button
-          key={lang}
-          className={
-            i18n.language === lang
-              ? `${styles.lang} ${styles.active}`
-              : styles.lang
-          }
-          onClick={() => i18n.changeLanguage(lang)}
+          key={lang.code}
+          className={`${styles.lang} ${i18n.language === lang.code ? styles.active : ''}`}
+          onClick={() => changeLanguage(lang.code)}
         >
-          {lang.toUpperCase()}
+          {lang.label}
         </button>
       ))}
     </div>

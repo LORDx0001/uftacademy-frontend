@@ -8,16 +8,76 @@ const About = () => {
   const [aboutData, setAboutData] = useState(null);
   const [statistics, setStatistics] = useState([]);
   const [images, setImages] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getAbout().then((res) => {
-      if (res.data && res.data.length > 0) {
-        setAboutData(res.data[0]);
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        const [aboutRes, statsRes, imagesRes] = await Promise.all([
+          getAbout(),
+          getAboutStats(),
+          getAboutImages()
+        ]);
+
+        if (aboutRes.data && aboutRes.data.length > 0) {
+          setAboutData(aboutRes.data[0]);
+        }
+        setStatistics(statsRes.data);
+        setImages(imagesRes.data);
+      } catch (error) {
+        console.error("Error fetching About data:", error);
+      } finally {
+        setIsLoading(false);
       }
-    });
-    getAboutStats().then((res) => setStatistics(res.data));
-    getAboutImages().then((res) => setImages(res.data));
+    };
+
+    fetchData();
   }, []);
+
+  // Skeleton Loading Component
+  const SkeletonLoader = () => (
+    <section id="about" className={styles.about}>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <div className={styles.textContent}>
+            <div className={styles.skeletonTitle}></div>
+            <div className={styles.skeletonDescription}>
+              <div className={styles.skeletonDescriptionLine}></div>
+              <div className={styles.skeletonDescriptionLine}></div>
+              <div className={styles.skeletonDescriptionLine}></div>
+              <div className={styles.skeletonDescriptionLine}></div>
+            </div>
+          </div>
+          
+          <div className={styles.imageContent}>
+            <div className={styles.skeletonImageGrid}>
+              <div className={styles.skeletonImage}></div>
+              <div className={styles.skeletonImage}></div>
+              <div className={styles.skeletonImage}></div>
+              <div className={styles.skeletonImage}></div>
+              <div className={styles.skeletonImage}></div>
+            </div>
+          </div>
+        </div>
+        
+        <div className={styles.skeletonStatistics}>
+          <div className={styles.skeletonStatsGrid}>
+            {[...Array(5)].map((_, index) => (
+              <div key={index} className={styles.skeletonStatItem}>
+                <div className={styles.skeletonStatNumber}></div>
+                <div className={styles.skeletonStatLabel}></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+
+  if (isLoading) {
+    return <SkeletonLoader />;
+  }
 
   return (
     <section id="about" className={styles.about}>
@@ -45,6 +105,7 @@ const About = () => {
                   src={image.image} 
                   alt={`About ${index + 1}`} 
                   className={styles.aboutImage} 
+                  loading="lazy"
                 />
               ))}
             </div>

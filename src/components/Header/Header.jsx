@@ -6,10 +6,10 @@ import Navbar from "./Navbar";
 import LangSwitcher from "./LangSwitcher";
 import { Link } from "react-router-dom";
 
-
 const Header = () => {
   const { i18n, t } = useTranslation();
   const [header, setHeader] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,6 +20,14 @@ const Header = () => {
     };
     fetchData();
   }, []);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   if (!header) return null;
 
@@ -40,10 +48,7 @@ const Header = () => {
   const buttons = t("header.buttons", { returnObjects: true });
 
   return (
-    <header
-      className={styles.header}
-    // style={{ backgroundImage: `url(${header.background})` }}
-    >
+    <header id="hero" className={styles.header}>
       <div className={styles.topBar}>
         <div className={styles.logo}>
           <Link to="/">
@@ -51,25 +56,55 @@ const Header = () => {
           </Link>
         </div>
 
+        {/* Desktop Navigation */}
         <div className={styles.rightBlock}>
           <Navbar />
           <LangSwitcher />
         </div>
+
+        {/* Burger Menu Button */}
+        <div
+          className={`${styles.burger} ${isMobileMenuOpen ? styles.active : ''}`}
+          onClick={toggleMobileMenu}
+        >
+          <div className={styles.burgerLine}></div>
+          <div className={styles.burgerLine}></div>
+          <div className={styles.burgerLine}></div>
+        </div>
       </div>
+
+      {/* Mobile Menu */}
+      <div className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.active : ''}`}>
+        <Navbar isMobile={true} onLinkClick={closeMobileMenu} />
+        <LangSwitcher isMobile={true} />
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div
+          className={styles.mobileMenuOverlay}
+          onClick={closeMobileMenu}
+        ></div>
+      )}
 
       <div className={styles.centerContent}>
         <h1 className={styles.title}>{currentTitle}</h1>
         <p className={styles.description}>{currentDescription}</p>
 
         <div className={styles.button3D}>
-          <a href="#">
+          <a href="#about" onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('about')?.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }}>
             {buttons.map((label, index) => (
               <span key={index}>{label}</span>
             ))}
           </a>
         </div>
       </div>
-
     </header>
   );
 };

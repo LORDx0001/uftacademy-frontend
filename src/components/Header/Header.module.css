@@ -55,6 +55,9 @@ header {
   transition: transform 0.3s ease;
 }
 
+.logo img:hover {
+  transform: scale(1.05);
+}
 
 .link-block {
   display: flex;
@@ -71,6 +74,77 @@ header {
 .langs {
   display: flex;
   gap: 10px;
+}
+
+/* === BURGER MENU === */
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1000;
+  padding: 10px;
+}
+
+.burgerLine {
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+  box-shadow: 0 0 5px #2BB32A;
+}
+
+.burger.active .burgerLine:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+  background-color: #2BB32A;
+}
+
+.burger.active .burgerLine:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.active .burgerLine:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+  background-color: #2BB32A;
+}
+
+/* === MOBILE MENU === */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  border-left: 2px solid #2BB32A;
+  z-index: 999;
+  transition: right 0.3s ease;
+  padding: 80px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.mobileMenu.active {
+  right: 0;
+}
+
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobileLangs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: auto;
 }
 
 /* === NAV LINKS === */
@@ -134,6 +208,19 @@ header {
   font-weight: 600;
 }
 
+/* === MOBILE LINK STYLES === */
+.mobileLinks .link {
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(43, 179, 42, 0.2);
+  text-align: center;
+  font-size: 16px;
+}
+
+.mobileLinks .link:hover {
+  background: rgba(43, 179, 42, 0.1);
+  border-radius: 8px;
+}
+
 /* === LANGUAGE BUTTONS === */
 .lang {
   padding: 4px 10px;
@@ -144,6 +231,7 @@ header {
   color: white;
   cursor: pointer;
   transition: 0.3s ease;
+  border-radius: 4px;
 }
 
 .lang:hover {
@@ -161,22 +249,6 @@ header {
   background-color: transparent;
   animation: langGlow 1.5s infinite alternate;
 }
-
-@keyframes langGlow {
-  0% {
-    box-shadow: 0 0 5px #2BB32A,
-      0 0 10px #2BB32A,
-      0 0 15px #2BB32A;
-  }
-
-  100% {
-    box-shadow: 0 0 15px #2BB32A,
-      0 0 30px #2BB32A,
-      0 0 45px #2BB32A;
-  }
-}
-
-
 
 /* === HERO SECTION === */
 .hero {
@@ -270,84 +342,7 @@ header {
   position: relative;
 }
 
-/* === ANIMATIONS === */
-@keyframes h1Glow {
-  0% {
-    text-shadow: 0 0 5px #2BB32A,
-      0 0 10px #2BB32A,
-      0 0 20px #2BB32A;
-  }
-
-  100% {
-    text-shadow: 0 0 10px #2BB32A,
-      0 0 20px #2BB32A,
-      0 0 40px #2BB32A,
-      0 0 80px #2BB32A;
-  }
-}
-
-@keyframes glowTitle {
-  0% {
-    text-shadow: 0 0 5px #2BB32A;
-  }
-
-  100% {
-    text-shadow: 0 0 15px #2BB32A,
-      0 0 30px #2BB32A;
-  }
-}
-
-@keyframes pulseGlow {
-  0% {
-    box-shadow: 0 0 5px #2BB32A,
-      0 0 10px #2BB32A,
-      0 0 20px #2BB32A;
-  }
-
-  100% {
-    box-shadow: 0 0 10px #2BB32A,
-      0 0 20px #2BB32A,
-      0 0 40px #2BB32A,
-      0 0 80px #2BB32A;
-  }
-}
-
-@keyframes langGlow {
-  0% {
-    text-shadow: 0 0 5px rgba(16, 221, 187, 0);
-  }
-
-  100% {
-    text-shadow: 0 0 10px #2BB32A,
-      0 0 20px #2BB32A,
-      0 0 40px #2BB32A;
-  }
-}
-
-@keyframes boxGlow {
-  0% {
-    box-shadow: 0 0 5px rgba(16, 221, 187, 0);
-  }
-
-  100% {
-    box-shadow: 0 0 10px #2BB32A,
-      0 0 20px #2BB32A,
-      0 0 40px #2BB32A;
-  }
-}
-
-@keyframes blackGlow {
-  0% {
-    box-shadow: 0 0 5px #2BB32A;
-  }
-
-  100% {
-    box-shadow: 0 0 15px #2BB32A,
-      0 0 30px #2BB32A,
-      0 0 60px #2BB32A;
-  }
-}
-
+/* === 3D BUTTON === */
 .button3D {
   display: flex;
   justify-content: center;
@@ -362,29 +357,6 @@ header {
   transform-style: preserve-3d;
   transform: perspective(1000px);
 }
-
-@keyframes rotateStep {
-  0% {
-    transform: perspective(1000px) rotateX(0deg);
-  }
-
-  25% {
-    transform: perspective(1000px) rotateX(90deg);
-  }
-
-  50% {
-    transform: perspective(1000px) rotateX(180deg);
-  }
-
-  75% {
-    transform: perspective(1000px) rotateX(270deg);
-  }
-
-  100% {
-    transform: perspective(1000px) rotateX(360deg);
-  }
-}
-
 
 .button3D a:hover {
   animation: rotateStep 3.5s ease-in-out forwards;
@@ -418,7 +390,6 @@ header {
 
 .button3D a:hover span {
   color: #ffffff;
-
   background: #000000cb;
   border: 2px solid rgb(255, 255, 255);
   box-shadow:
@@ -442,4 +413,322 @@ header {
 
 .button3D a span:nth-child(4) {
   transform: rotateX(90deg) translateZ(25px);
+}
+
+/* === ANIMATIONS === */
+@keyframes langGlow {
+  0% {
+    box-shadow: 0 0 5px #2BB32A,
+      0 0 10px #2BB32A,
+      0 0 15px #2BB32A;
+  }
+  100% {
+    box-shadow: 0 0 15px #2BB32A,
+      0 0 30px #2BB32A,
+      0 0 45px #2BB32A;
+  }
+}
+
+@keyframes h1Glow {
+  0% {
+    text-shadow: 0 0 5px #2BB32A,
+      0 0 10px #2BB32A,
+      0 0 20px #2BB32A;
+  }
+  100% {
+    text-shadow: 0 0 10px #2BB32A,
+      0 0 20px #2BB32A,
+      0 0 40px #2BB32A,
+      0 0 80px #2BB32A;
+  }
+}
+
+@keyframes glowTitle {
+  0% {
+    text-shadow: 0 0 5px #2BB32A;
+  }
+  100% {
+    text-shadow: 0 0 15px #2BB32A,
+      0 0 30px #2BB32A;
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 5px #2BB32A,
+      0 0 10px #2BB32A,
+      0 0 20px #2BB32A;
+  }
+  100% {
+    box-shadow: 0 0 10px #2BB32A,
+      0 0 20px #2BB32A,
+      0 0 40px #2BB32A,
+      0 0 80px #2BB32A;
+  }
+}
+
+@keyframes boxGlow {
+  0% {
+    box-shadow: 0 0 5px rgba(16, 221, 187, 0);
+  }
+  100% {
+    box-shadow: 0 0 10px #2BB32A,
+      0 0 20px #2BB32A,
+      0 0 40px #2BB32A;
+  }
+}
+
+@keyframes blackGlow {
+  0% {
+    box-shadow: 0 0 5px #2BB32A;
+  }
+  100% {
+    box-shadow: 0 0 15px #2BB32A,
+      0 0 30px #2BB32A,
+      0 0 60px #2BB32A;
+  }
+}
+
+@keyframes rotateStep {
+  0% {
+    transform: perspective(1000px) rotateX(0deg);
+  }
+  25% {
+    transform: perspective(1000px) rotateX(90deg);
+  }
+  50% {
+    transform: perspective(1000px) rotateX(180deg);
+  }
+  75% {
+    transform: perspective(1000px) rotateX(270deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(360deg);
+  }
+}
+
+@keyframes neonPulse {
+  0% {
+    box-shadow:
+      0 0 5px #2BB32A,
+      0 0 10px #2BB32A,
+      0 0 20px #2BB32A,
+      inset 0 0 10px #2BB32A;
+  }
+  100% {
+    box-shadow:
+      0 0 10px #2BB32A,
+      0 0 20px #2BB32A,
+      0 0 40px #2BB32A,
+      inset 0 0 20px #2BB32A;
+  }
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0 40px;
+  }
+  
+  .title {
+    font-size: 3rem;
+  }
+  
+  .description {
+    font-size: 1.2rem;
+  }
+  
+  .centerContent {
+    padding: 0 30px;
+  }
+  
+  .hero {
+    padding: 0 15vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 20px;
+  }
+  
+  .logo img {
+    height: 60px;
+    width: 150px;
+  }
+  
+  .link-block {
+    display: none;
+  }
+  
+  .burger {
+    display: flex;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+  
+  .centerContent {
+    padding: 0 20px;
+  }
+  
+  .hero {
+    padding: 0 10vw;
+  }
+  
+  .button {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+  
+  .button3D a {
+    width: 140px;
+    height: 50px;
+  }
+  
+  .button3D a span {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 15px;
+  }
+  
+  .logo img {
+    height: 50px;
+    width: 120px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+  }
+  
+  .centerContent {
+    padding: 0 15px;
+    gap: 15px;
+  }
+  
+  .hero {
+    padding: 0 5vw;
+  }
+  
+  .button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+  
+  .button3D a {
+    width: 120px;
+    height: 45px;
+  }
+  
+  .button3D a span {
+    font-size: 14px;
+  }
+  
+  .mobileMenu {
+    width: 250px;
+  }
+}
+
+@media (max-width: 360px) {
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .description {
+    font-size: 0.8rem;
+  }
+  
+  .button {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+  
+  .mobileMenu {
+    width: 220px;
+  }
+}
+
+/* Добавить в Header.module.css */
+
+/* === MOBILE MENU OVERLAY === */
+.mobileMenuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+
+/* === MOBILE NAVBAR === */
+.mobileNavbar {
+  width: 100%;
+}
+
+.mobileNavbar .mobileLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobileNavbar .mobileLinks li {
+  width: 100%;
+}
+
+.mobileNavbar .link {
+  display: block;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(43, 179, 42, 0.2);
+  text-align: center;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mobileNavbar .link:hover {
+  background: rgba(43, 179, 42, 0.1);
+  border-radius: 8px;
+}
+
+/* === MOBILE LANGUAGES === */
+.mobileLangs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: auto;
+  padding: 20px 0;
+}
+
+.mobileLangs .lang {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+/* ...existing code... */
+
+@media (max-width: 768px) {
+  /* ...existing code... */
+  
+  .rightBlock {
+    display: none;
+  }
+  
+  /* ...existing code... */
 }
